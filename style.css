@@ -1,0 +1,68 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide scrollbars */
+    position: relative;
+}
+
+.video-feed {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    overflow-y: scroll; /* Enable video scrolling*/
+    scroll-snap-type: y mandatory; /*Scroll snap for each video*/
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    scroll-snap-align: start; /*Scroll snap for each video*/
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire viewport */
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.nav-item.active {
+    color: #3498db; /* Highlight active navigation item */
+}
+
+.nav-text{
+    font-size: 0.7rem;
+}
