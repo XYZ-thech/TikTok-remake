@@ -1,14 +1,23 @@
 {
-  "name": "simple-tiktok-clone",
+  "name": "tiktok-replica",
   "version": "1.0.0",
-  "description": "A simple TikTok-like website",
-  "main": "index.html",
+  "description": "A basic TikTok replica for learning purposes",
+  "main": "index.js",
   "scripts": {
-    "start": "http-server -p 8080"
+    "start": "echo 'No server to start yet, just open index.html in the browser'",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "http-server": "^14.1.1"
-  }
+  "repository": {
+      "type": "git",
+       "url": ""
+    },
+  "keywords": [
+    "tiktok",
+    "replica",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
 }
