@@ -1,30 +1,20 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const videoFeed = document.querySelector('.video-feed');
-    const videos = [
-        'assets/video1.mp4',
-        'assets/video2.mp4',
-        'assets/video3.mp4'
-    ]; // Placeholder video URLs
 
-    videos.forEach(videoUrl => {
-        const videoContainer = document.createElement('div');
-        videoContainer.classList.add('video-container');
-        const video = document.createElement('video');
-        video.src = videoUrl;
-        video.loop = true; // Loop the video
-        video.controls = false; // Remove native controls
-        video.autoplay = true;
-        video.muted = true; //Mute by default
-        videoContainer.appendChild(video);
+  const likeContainers = document.querySelectorAll('.like-container');
 
-        video.addEventListener('click', function () {
-            if (video.paused) {
-                 video.play();
-            } else {
-                 video.pause();
+    likeContainers.forEach(container => {
+        const likeIcon = container.querySelector('.like-icon');
+        const likeCount = container.querySelector('.like-count');
+        let count = parseInt(likeCount.textContent, 10);
+
+        likeIcon.addEventListener('click', () => {
+             if (likeIcon.classList.contains('liked')) {
+                 likeIcon.classList.remove('liked');
+                count--;
+            }else{
+                 likeIcon.classList.add('liked');
+                count++;
             }
+            likeCount.textContent = count;
         });
 
-        videoFeed.appendChild(videoContainer);
-    });
-});
+         });        
