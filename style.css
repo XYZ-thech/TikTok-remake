@@ -12,30 +12,30 @@ body {
 
 .container {
     width: 100%;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Hide scrollbars */
+    height: 100vh;
+    overflow: hidden;
     position: relative;
 }
 
 .video-feed {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Full viewport height */
-    overflow-y: scroll; /* Enable video scrolling*/
-    scroll-snap-type: y mandatory; /*Scroll snap for each video*/
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
 
 .video-container {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full viewport height */
-    scroll-snap-align: start; /*Scroll snap for each video*/
+    height: 100vh;
+    scroll-snap-align: start;
 }
 
 video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the entire viewport */
+    object-fit: cover;
 }
 
 .bottom-nav {
@@ -60,7 +60,7 @@ video {
 }
 
 .nav-item.active {
-    color: #3498db; /* Highlight active navigation item */
+    color: #3498db;
 }
 
 .nav-text{
