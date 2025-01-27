@@ -1,5 +1,6 @@
-
-  const likeContainers = document.querySelectorAll('.like-container');
+ const likeContainers = document.querySelectorAll('.like-container');
+ const favoriteContainers = document.querySelectorAll('.favorite-container');
+const repostContainers = document.querySelectorAll('.repost-container');
 
     likeContainers.forEach(container => {
         const likeIcon = container.querySelector('.like-icon');
@@ -17,4 +18,37 @@
             likeCount.textContent = count;
         });
 
-         });        
+         });
+
+  favoriteContainers.forEach(container => {
+        const favoriteIcon = container.querySelector('.favorite-icon');
+
+
+        favoriteIcon.addEventListener('click', () => {
+             if (favoriteIcon.classList.contains('favorited')) {
+                 favoriteIcon.classList.remove('favorited');
+
+            }else{
+                 favoriteIcon.classList.add('favorited');
+
+            }
+        });
+
+         });
+
+
+    repostContainers.forEach(container => {
+        const repostIcon = container.querySelector('.repost-icon');
+
+
+        repostIcon.addEventListener('click', () => {
+             if (repostIcon.classList.contains('reposted')) {
+                 repostIcon.classList.remove('reposted');
+
+            }else{
+                 repostIcon.classList.add('reposted');
+
+            }
+        });
+
+         });
