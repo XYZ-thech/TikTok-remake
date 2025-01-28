@@ -29,8 +29,8 @@
     const videoFeedContainer = document.getElementById('video-feed');
     // Embed code (from tiktok "embed" option)
     const videoEmbeds = [
-        '<iframe src="https://www.tiktok.com/embed/7329052913739117855" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
-        '<iframe src="https://www.tiktok.com/embed/7328828916543999275" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
+        '<iframe src="https://www.tiktok.com/@orthodox_woman_2/photo/7459114605273517334?lang=en" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
+        '<iframe src="https://www.tiktok.com/@user920390113/photo/7453655035877199150?lang=en" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
         '<iframe src="https://www.tiktok.com/embed/7328153350272636203" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
         '<iframe src="https://www.tiktok.com/embed/7328147967266385198" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
         '<iframe src="https://www.tiktok.com/embed/7328073952427708719" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
