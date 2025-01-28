@@ -28,7 +28,6 @@
     // Video Loading
     const videoFeedContainer = document.getElementById('video-feed');
     // Embed code (from tiktok "embed" option)
-    // The video list has not changed in this new version
    const videoEmbeds = [
         '<iframe allow="fullscreen" src="https://www.tiktok.com/embed/7453655035877199150" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
         '<iframe allow="fullscreen" src="https://www.tiktok.com/embed/7459114605273517334" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
