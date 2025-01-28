@@ -1,4 +1,4 @@
-      //Selecting elements for dynamic updating or event listeners
+    //Selecting elements for dynamic updating or event listeners
     const navLinks = document.querySelectorAll('.sidebar-nav ul li a');
 
     // Simple Example of an Event Handler
@@ -28,17 +28,16 @@
     // Video Loading
     const videoFeedContainer = document.getElementById('video-feed');
     // Embed code (from tiktok "embed" option)
+    // The video list has not changed in this new version
    const videoEmbeds = [
-       '<iframe allow="fullscreen" src="https://www.tiktok.com/embed/7453655035877199150" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
-       '<iframe allow="fullscreen" src="https://www.tiktok.com/embed/7459114605273517334" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
+        '<iframe allow="fullscreen" src="https://www.tiktok.com/embed/7453655035877199150" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
+        '<iframe allow="fullscreen" src="https://www.tiktok.com/embed/7459114605273517334" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
        '<iframe allow="fullscreen" src="https://www.tiktok.com/embed/7329052913739117855" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
         '<iframe allow="fullscreen" src="https://www.tiktok.com/embed/7328828916543999275" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
         '<iframe allow="fullscreen" src="https://www.tiktok.com/embed/7328153350272636203" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
         '<iframe allow="fullscreen" src="https://www.tiktok.com/embed/7328147967266385198" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
         '<iframe allow="fullscreen" src="https://www.tiktok.com/embed/7328073952427708719" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
-
     ];
-
 
     let currentVideoIndex = 0;
     videoEmbeds.forEach(embed =>{
@@ -80,6 +79,18 @@
 
                 })
             });
+
+            // ADD video loading to profile page
+            // get the div where we will load the videos in the profile.html
+            const profileVideoFeedContainer = document.querySelector('.profile-videos .video-container');
+            if (profileVideoFeedContainer) { // make sure the profileVideoFeedContainer exists
+                // Add videos to the profile feed container
+                videoEmbeds.forEach(embed =>{
+                   const newDiv = document.createElement('div');
+                   newDiv.innerHTML = embed;
+                   profileVideoFeedContainer.appendChild(newDiv);
+               });
+           }
         })
         .catch(error => console.error('Error fetching profile page:', error));
     });
