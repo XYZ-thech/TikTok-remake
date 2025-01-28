@@ -1,54 +1,25 @@
- const likeContainers = document.querySelectorAll('.like-container');
- const favoriteContainers = document.querySelectorAll('.favorite-container');
-const repostContainers = document.querySelectorAll('.repost-container');
+    //Selecting elements for dynamic updating or event listeners
+    const navLinks = document.querySelectorAll('.sidebar-nav ul li a');
 
-    likeContainers.forEach(container => {
-        const likeIcon = container.querySelector('.like-icon');
-        const likeCount = container.querySelector('.like-count');
-        let count = parseInt(likeCount.textContent, 10);
+    // Simple Example of an Event Handler
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(event){
+          //prevent default anchor action (going to url)
+          event.preventDefault();
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+          console.log(`Clicked ${this.textContent}`);
+          //you could potentially update content based on what was clicked here
 
-        likeIcon.addEventListener('click', () => {
-             if (likeIcon.classList.contains('liked')) {
-                 likeIcon.classList.remove('liked');
-                count--;
-            }else{
-                 likeIcon.classList.add('liked');
-                count++;
-            }
-            likeCount.textContent = count;
-        });
+        })
+    });
 
-         });
+    //Basic example of manipulating the UI
+    const arrowButtons = document.querySelectorAll('.actions button')
 
-  favoriteContainers.forEach(container => {
-        const favoriteIcon = container.querySelector('.favorite-icon');
-
-
-        favoriteIcon.addEventListener('click', () => {
-             if (favoriteIcon.classList.contains('favorited')) {
-                 favoriteIcon.classList.remove('favorited');
-
-            }else{
-                 favoriteIcon.classList.add('favorited');
-
-            }
-        });
-
-         });
-
-
-    repostContainers.forEach(container => {
-        const repostIcon = container.querySelector('.repost-icon');
-
-
-        repostIcon.addEventListener('click', () => {
-             if (repostIcon.classList.contains('reposted')) {
-                 repostIcon.classList.remove('reposted');
-
-            }else{
-                 repostIcon.classList.add('reposted');
-
-            }
-        });
-
-         });
+    arrowButtons.forEach(button =>{
+      button.addEventListener('click', () => {
+        console.log(`clicked arrow ${button.textContent}`)
+        alert(`Clicked ${button.textContent} - This would typically scroll or interact in some way, but for demo is just an alert`)
+      })
+    });
