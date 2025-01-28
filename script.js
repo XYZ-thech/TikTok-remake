@@ -20,7 +20,7 @@
     arrowButtons.forEach(button =>{
       button.addEventListener('click', () => {
         console.log(`clicked arrow ${button.textContent}`)
-        alert(`Clicked ${button.textContent} - This would typically scroll or interact in some way, but for demo is just an alert`)
+          scrollVideo(button.textContent === '^' ? -1 : 1)
       })
     });
 
@@ -35,10 +35,20 @@
         '<iframe src="https://www.tiktok.com/embed/7328147967266385198" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
         '<iframe src="https://www.tiktok.com/embed/7328073952427708719" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
 
-    ]
-    // Add videos to the video feed container
+    ];
+
+
+    let currentVideoIndex = 0;
     videoEmbeds.forEach(embed =>{
         const newDiv = document.createElement('div');
         newDiv.innerHTML = embed;
         videoFeedContainer.appendChild(newDiv);
     })
+
+
+    const allVideos = document.querySelectorAll('#video-feed > div')
+
+    const scrollVideo = (direction) =>{
+        currentVideoIndex = (currentVideoIndex + direction + allVideos.length) % allVideos.length;
+        videoFeedContainer.style.transform = `translateY(-${currentVideoIndex * 720}px)`
+      }
