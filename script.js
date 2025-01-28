@@ -1,4 +1,4 @@
-    //Selecting elements for dynamic updating or event listeners
+      //Selecting elements for dynamic updating or event listeners
     const navLinks = document.querySelectorAll('.sidebar-nav ul li a');
 
     // Simple Example of an Event Handler
@@ -56,10 +56,30 @@
       }
 
     // Get the Profile button
-   const profileButton = document.querySelector('.sidebar-nav ul li a:nth-child(9)'); // Select the correct link
+    const profileButton = document.querySelector('.sidebar-nav ul li a:nth-child(9)');
 
-    // Open the Profile page on click
+    // Load profile content into the container
     profileButton.addEventListener('click', function(event) {
-        event.preventDefault();  //prevent default navigation
-        window.open('profile.html', '_blank'); // Open profile.html in a new tab
+      event.preventDefault();
+      fetch('profile.html')
+        .then(response => response.text())
+        .then(html => {
+          document.querySelector('.container').innerHTML = html;
+            //re-add event listeners
+            const navLinks = document.querySelectorAll('.sidebar-nav ul li a');
+
+            // Simple Example of an Event Handler
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event){
+                  //prevent default anchor action (going to url)
+                  event.preventDefault();
+                  navLinks.forEach(l => l.classList.remove('active'));
+                  this.classList.add('active');
+                  console.log(`Clicked ${this.textContent}`);
+                  //you could potentially update content based on what was clicked here
+
+                })
+            });
+        })
+        .catch(error => console.error('Error fetching profile page:', error));
     });
