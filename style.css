@@ -132,3 +132,8 @@ main.content {
   padding: 10px;
   border: none;
 }
+
+iframe.tiktok-embed{
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
