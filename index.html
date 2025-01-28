@@ -3,113 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic TikTok Replica</title>
+    <title>TikTok Inspired</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="app-container">
-        <div class="sidebar">
-            <div class="logo">
-                <img src="tiktok_logo.PNG" alt="TikTok Logo" class="tiktok-logo">
+    <div class="container">
+      <aside class="sidebar">
+          <div class="sidebar-header">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/TikTok_logo_2022.svg/1280px-TikTok_logo_2022.svg.png" alt="TikTok Logo">
+            <input type="text" placeholder="Search">
+          </div>
+
+          <nav class="sidebar-nav">
+              <ul>
+                  <li><a href="#" class="active">For You</a></li>
+                  <li><a href="#">Explore</a></li>
+                  <li><a href="#">Following</a></li>
+                  <li><a href="#">Friends</a></li>
+                  <li><a href="#">Upload</a></li>
+                  <li><a href="#">Activity</a></li>
+                  <li><a href="#">Messages</a></li>
+                  <li><a href="#">LIVE</a></li>
+                  <li><a href="#">Profile</a></li>
+                  <li><a href="#">More</a></li>
+              </ul>
+          </nav>
+          <div class="following-accounts">
+            <p>Following accounts</p>
+              <ul>
+                <li><a href="#"><img src="https://placehold.co/20" alt="User Profile">Phone repair gur...</a></li>
+                <li><a href="#"><img src="https://placehold.co/20" alt="User Profile">bri <3</a></li>
+                <li><a href="#"><img src="https://placehold.co/20" alt="User Profile">Carterpcs</a></li>
+                <li><a href="#"><img src="https://placehold.co/20" alt="User Profile">HawkTuhCrusader</a></li>
+                <li><a href="#"><img src="https://placehold.co/20" alt="User Profile">Sophie Rain</a></li>
+                <li><a href="#">See more</a></li>
+              </ul>
+
+            <div class="company">
+              <p>Company</p>
+              <p>Program</p>
             </div>
-             <div class="sidebar-menu">
-               <div class="sidebar-item search-icon">
-                    <img src="assets/search_icon.png" alt="Search Icon">
-                 </div>
-                  <div class="sidebar-item message-icon">
-                        <img src="assets/message_icon.png" alt="Message Icon">
-                    </div>
-                    <div class="sidebar-item profile-icon">
-                        <img src="assets/profile_icon.png" alt="Profile Icon">
-                    </div>
-                    <div class="sidebar-item following-icon">
-                           <img src="assets/following_icon.png" alt="Following Icon">
-                    </div>
-                </div>
-        </div>
 
-        <div class="main-content">
-            <div class="video-feed">
-                <script>
-                      const videos = [
-                            {
-                                src: 'assets/sample_video1.mp4',
-                                user: 'User 1',
-                                description: 'Short Description of Video 1',
-                                likeCount: 100,
-                                commentCount: 50,
-                                userIcon: 'assets/user_icon.png'
-
-                            },
-                            {
-                                src: 'assets/sample_video2.mp4',
-                                  user: 'User 2',
-                                description: 'Short Description of Video 2',
-                                likeCount: 50,
-                                commentCount: 20,
-                                 userIcon: 'assets/user_icon.png'
-                            },
-                           {
-                                src: 'assets/sample_video3.mp4',
-                                  user: 'User 3',
-                                description: 'Short Description of Video 3',
-                                likeCount: 120,
-                                commentCount: 80,
-                                userIcon: 'assets/user_icon.png'
-                            },
-                              {
-                                src: 'assets/sample_video4.mp4',
-                                  user: 'User 4',
-                                description: 'Short Description of Video 4',
-                                 likeCount: 60,
-                                commentCount: 15,
-                                  userIcon: 'assets/user_icon.png'
-                            }
-                        ]
-
-
-                    videos.forEach(video => {
-                            document.write(`
-                        <div class="video-container">
-                              <video controls loop muted class="video-player">
-                                  <source src="${video.src}" type="video/mp4">
-                                   Your browser does not support the video tag.
-                              </video>
-                             <div class="video-details">
-                                    <div class="user-info">
-                                       <img src="${video.userIcon}" class="user-icon">
-                                          <h3>${video.user}</h3>
-                                     </div>
-                                       <p>${video.description}</p>
-                                   <div class="video-interaction">
-                                        <div class="interaction-container">
-                                           <div class="like-container">
-                                                <span class="like-icon">❤️</span>
-                                                <span class="like-count">${video.likeCount}</span>
-                                           </div>
-                                            <div class="comment-container">
-                                                  <span class="comment-icon">💬</span>
-                                                <span class="comment-count">${video.commentCount}</span>
-                                            </div>
-                                        </div>
-                                      <div class="favorite-container">
-                                         <span class="favorite-icon">⭐</span>
-                                     </div>
-                                     <div class="repost-container">
-                                        <span class="repost-icon">↩️</span>
-                                     </div>
-                                     <div class="send-container">
-                                         <span class="send-icon">➡️</span>
-                                    </div>
-                               </div>
-                            </div>
-                        </div>
-                    `);
-                     })
-                 </script>
             </div>
-        </div>
+      </aside>
+      <main class="content">
+          <!-- Your main content, e.g., video feed -->
+        <p style="text-align:center">
+            Videos will appear here. Implement the video feed here
+          </p>
+      </main>
+      <div class="actions">
+        <button class="arrow">^</button>
+        <button class="arrow">v</button>
+      </div>
+      <div class="get-app">
+        <button>Get app</button>
+      </div>
     </div>
-     <script src="script.js"></script>
+
 </body>
 </html>
