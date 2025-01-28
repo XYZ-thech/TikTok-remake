@@ -23,3 +23,22 @@
         alert(`Clicked ${button.textContent} - This would typically scroll or interact in some way, but for demo is just an alert`)
       })
     });
+
+
+    // Video Loading
+    const videoFeedContainer = document.getElementById('video-feed');
+    // Embed code (from tiktok "embed" option)
+    const videoEmbeds = [
+        '<iframe src="https://www.tiktok.com/embed/7329052913739117855" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
+        '<iframe src="https://www.tiktok.com/embed/7328828916543999275" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
+        '<iframe src="https://www.tiktok.com/embed/7328153350272636203" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
+        '<iframe src="https://www.tiktok.com/embed/7328147967266385198" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
+        '<iframe src="https://www.tiktok.com/embed/7328073952427708719" class="tiktok-embed" width="325" height="700" frameborder="0"></iframe>',
+
+    ]
+    // Add videos to the video feed container
+    videoEmbeds.forEach(embed =>{
+        const newDiv = document.createElement('div');
+        newDiv.innerHTML = embed;
+        videoFeedContainer.appendChild(newDiv);
+    })
