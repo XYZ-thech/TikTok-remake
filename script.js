@@ -54,3 +54,12 @@
         currentVideoIndex = (currentVideoIndex + direction + allVideos.length) % allVideos.length;
         videoFeedContainer.style.transform = `translateY(-${currentVideoIndex * 720}px)`
       }
+
+    // Get the Profile button
+   const profileButton = document.querySelector('.sidebar-nav ul li a:nth-child(9)'); // Select the correct link
+
+    // Open the Profile page on click
+    profileButton.addEventListener('click', function(event) {
+        event.preventDefault();  //prevent default navigation
+        window.open('profile.html', '_blank'); // Open profile.html in a new tab
+    });
